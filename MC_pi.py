@@ -40,16 +40,16 @@ seed=1
 #Input validation
 if (len(sys.argv)==3):
 
-   print(f" \n User input: N:{sys.argv[1]} seed:{sys.argv[2]}\n")
+   print(f"\n-->User input: N:{sys.argv[1]} seed:{sys.argv[2]}\n")
    try:
        n_int=int(sys.argv[1])
        seed=int(sys.argv[2])
    except:
-       print("Prameters should be integers!\n")
+       print("ALERT: Prameters should be integers!\n")
        n_int=0  #This makes sure the program won't try to run
 
 else:
-   print("Please re-run the program with 2 parameters: N and seed.\n")
+   print("ALERT:  Please re-run the program with 2 parameters: N and seed.\n")
    
 #------------------------------------------------
 #               METHODS
@@ -79,7 +79,7 @@ def main(n_int,seed):
     
    area=(XMAX-XMIN)*(YMAX-YMIN)*n_in/float(n_int)
    print(area)
-   print(f" \n \n    pi={area:15.14f} with n_int={n_int} \n ")
+   print(f"\n\npi={area:15.14f} with n_int={n_int} \n ")
 
 
 
@@ -87,9 +87,9 @@ def main(n_int,seed):
 if n_int:
     START = time.time()
     random.seed(int(seed))
-    print("\n-->You are running the program: "+PROGRAM_NAME+"\n\n")
+    print("-->You are running the program: "+PROGRAM_NAME+"\n\n")
     #print(PROGRAM_NAME)       
     main(int(n_int),seed)
     #print info about how long it takes...  
-    print("--- %s seconds ---" % (time.time() - START))
+    print(f"  --- {(time.time() - START):6.2f} seconds ---" )
 
